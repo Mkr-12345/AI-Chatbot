@@ -6,7 +6,7 @@ A small Python chatbot that sends natural-language messages to an OpenAI-compati
 
 - Accepts a plain-language message from a terminal or a web page.
 - Builds a chat-completions request: system prompt, then the full turn history, then the new message.
-- Keeps that history for the next turn until you clear it.
+- Keeps that history for the next turn until you clear it yourself.
 - Lets you switch the system prompt without deleting earlier turns.
 - Compares two prompts on one message so the answers differ only by the instruction.
 
