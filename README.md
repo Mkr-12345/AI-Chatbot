@@ -32,6 +32,14 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
+To install the exact package versions this project was built with, use the pinned list instead of `requirements.txt`:
+
+```bash
+pip install -r requirements-lock.txt
+```
+
+The `.venv` folder itself is not committed. It is machine-specific, so each person creates their own from these files.
+
 Edit `.env`:
 
 | Variable | Purpose |
