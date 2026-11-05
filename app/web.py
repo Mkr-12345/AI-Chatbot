@@ -1,6 +1,7 @@
 """Small web UI for multi-turn chat and prompt comparison."""
 
 from pathlib import Path
+import os
 
 from flask import Flask, jsonify, render_template, request
 
@@ -100,7 +101,11 @@ def main() -> None:
         print("LLM_API_KEY is not set. The page will load, and chat requests will explain how to configure .env.")
     else:
         print(f"Using model {info['model']} at {info['base_url']}")
-    app.run(host="127.0.0.1", port=5000, debug=False)
+    app.run(
+        host="0.0.0.0",
+        port=int(os.getenv("PORT", "5000")),
+        debug=False,
+    )
 
 
 if __name__ == "__main__":

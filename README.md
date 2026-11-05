@@ -82,6 +82,12 @@ python -m app.web
 
 Open [http://127.0.0.1:5000](http://127.0.0.1:5000). The left side is the multi-turn conversation. The right side is the prompt lab.
 
+## Deploy on Render
+
+This repository includes a `render.yaml` service definition. In Render, choose **New > Blueprint**, connect this repository, and apply the blueprint. Set the required `LLM_API_KEY` environment variable in the Render dashboard; `LLM_BASE_URL` and `LLM_MODEL` default to OpenAI.
+
+Render starts the app with Gunicorn and exposes the configured `/api/status` health check. The application listens on Render's `PORT` and `0.0.0.0` automatically.
+
 ## Tests
 
 ```bash
